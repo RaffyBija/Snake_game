@@ -74,9 +74,9 @@ window.onload = () => {
             //Animazione per ruotare correttamente le parti del corpo
             // Aggiorna la rotazione del segmento
             if (snakePoint.part[i].dir.X === 0 && snakePoint.part[i].dir.Y === 1) {
-                snake[i].style.transform = "rotate(90deg)";
+                snake[i].style.transform = "rotate(-90deg)";
             } else if (snakePoint.part[i].dir.X === 1 && snakePoint.part[i].dir.Y === 0) {
-                snake[i].style.transform = "rotate(0deg)";
+                snake[i].style.transform = "rotate(180deg)";
             } else if (snakePoint.part[i].dir.X === 0 && snakePoint.part[i].dir.Y === -1) {
                 snake[i].style.transform = "rotate(90deg)";
             } else if (snakePoint.part[i].dir.X === -1 && snakePoint.part[i].dir.Y === 0) {
@@ -114,12 +114,12 @@ window.onload = () => {
         // Crea un nuovo elemento div per la parte del serpente
         const part = document.createElement('div');
         part.classList.add("snake");
-
         // Ottieni l'ultima parte del corpo e, se esiste, la penultima
         const lastIndex = snakePoint.part.length - 1;
         const lastPart = snakePoint.part[lastIndex];
-
         const secondLastPart = snakePoint.part[lastIndex - 1] || lastPart;
+
+        snake[lastIndex].removeAttribute('id');
 
         // Calcola la direzione della nuova parte in base alla posizione delle ultime due
         const offsetX = lastPart.X - secondLastPart.X;
@@ -138,9 +138,10 @@ window.onload = () => {
         // Aggiorna lo stile della nuova parte
         part.style.top = `${newPoint.Y}px`;
         part.style.left = `${newPoint.X}px`;
-
+        
         // Aggiungi la nuova parte al corpo del serpente
         snakePoint.part.push(newPoint);
+        part.id="tail";
         gameArea.appendChild(part);
 
         console.log('Nuova parte aggiunta:', newPoint);
