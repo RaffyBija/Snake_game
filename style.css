@@ -2,11 +2,33 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 98vh;
 }
+#header{
+    background-color: blue;
+    width: 660px;
+    font-size: 30px;
+    #apple-div{
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    #apple-num{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 @keyframes pulse {
-    0%{border-color:rgba(255, 0, 0, 0.650)}
-    100%{border-color: rgba(255, 0, 0, 0.85)}
+    from{border-color:rgba(255, 0, 0, 0.650)}
+    to{border-color: rgba(255, 0, 0, 0.85)}
     
 }
 #game-area{
