@@ -79,7 +79,7 @@ Puoi modificare il gioco facilmente:
 ---
 
 ## Autore
-Progetto sviluppato da **[Il tuo Nome]**.
+Progetto sviluppato da **Raffaele Di Donna**.
 
 ---
 
