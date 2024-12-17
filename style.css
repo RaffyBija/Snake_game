@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+@keyframes pulse {
+    0%{border-color:rgba(255, 0, 0, 0.650)}
+    100%{border-color: rgba(255, 0, 0, 0.85)}
+    
+}
+#game-area{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-color: gray;
+    border: 30px solid rgba(255, 0, 0, 0.450) ;
+    animation: pulse 0.5s infinite alternate;
+}
+
+.snake{
+    position: absolute;
+    background-color: green;
+    background-image: url("./IMG/snakeskin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2 solid black;
+    top: 330px;
+    left: 300px;
+}
+.top{
+    transform: rotate(0deg);
+}
+
+
+.head{
+    background-color: transparent;
+    background-image: url("./IMG/snake_head.png");
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
+    transform: rotate(180deg);
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    z-index: 1;
+}
+
+.food{
+    
+    width: 30px;
+    height: 30px; /* adjust to control the size */
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    background-image: url("./IMG/apple.png");
+    background-repeat: no-repeat;
+    background-size: 190%;
+    background-position: center;
+}
