@@ -1,7 +1,9 @@
 # Snake Game
 
 ### Descrizione del Progetto  
-Questo progetto è un semplice gioco del serpente (**Snake Game**) sviluppato utilizzando **HTML**, **CSS** e **JavaScript**. Il gioco si svolge in un browser e permette di controllare un serpente che deve raccogliere cibo (mele) all'interno di un'area di gioco. Ogni volta che il serpente mangia una mela, il punteggio aumenta e il serpente cresce di dimensioni.
+Questo progetto è un semplice gioco del serpente (**Snake Game**) sviluppato utilizzando **HTML**, **CSS** e **JavaScript**. 
+Il gioco si svolge in un browser e permette di controllare un serpente che deve raccogliere cibo (mele) all'interno di un'area di gioco. 
+Ogni volta che il serpente mangia una mela, il punteggio aumenta e il serpente cresce di dimensioni.
 
 ---
 
