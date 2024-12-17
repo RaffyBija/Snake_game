@@ -202,7 +202,7 @@ window.onload = () => {
         }
         else {
             gameActive = true;
-            move = setInterval(moveSnake, 200, -30);
+            move = setInterval(moveSnake, 100, -30);
         }
     });
 }
