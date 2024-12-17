@@ -71,7 +71,7 @@ window.onload = () => {
             snake[i].style.top = `${snakePoint.part[i].Y}px`;
 
 
-            //TODO: creare l'animazione per ruotare correttamente le parti del corpo
+            //Animazione per ruotare correttamente le parti del corpo
             // Aggiorna la rotazione del segmento
             if (snakePoint.part[i].dir.X === 0 && snakePoint.part[i].dir.Y === 1) {
                 snake[i].style.transform = "rotate(90deg)";
@@ -104,7 +104,7 @@ window.onload = () => {
         //Controllo se ho raggiunto la mela
         if (snakePoint.headSnake.X === foodPoint.X && snakePoint.headSnake.Y === foodPoint.Y) {
             console.log("Mela mangiata");
-            appleCounter.innerText = (appleCounter.innerText*1)+1;
+            appleCounter.innerText = (appleCounter.innerText * 1) + 1;
             newPart();
             placeFood();
         }
@@ -147,35 +147,35 @@ window.onload = () => {
 
     };
 
-    const matchFoodPart = (segment) => { return segment.X === foodPoint.X && segment.Y === foodPoint.Y; }
+    const matchFoodPart = (segment) => { return segment.X === foodPoint.X && segment.Y === foodPoint.Y;}
 
     const placeFood = () => {
         foodPoint.X = Math.floor(Math.random() * 570 / 30) * 30;
         foodPoint.Y = Math.floor(Math.random() * 570 / 30) * 30;
-
-        console.log(`Food X: ${foodPoint.X} -- Food Y: ${foodPoint.Y}`);
-        console.log("Food match Part? ", snakePoint.part.some(matchFoodPart));
-        if (snakePoint.part.some(matchFoodPart)) placeFood();
-        else {
-            food.style.top = `${foodPoint.Y}px`;
-            food.style.left = `${foodPoint.X}px`;
-
+        //Controllo per evitare di generare una coordinata che corrisponda ad un segmento del serpente
+        while(snakePoint.part.some(matchFoodPart)){
+            foodPoint.X = Math.floor(Math.random() * 570 / 30) * 30;
+            foodPoint.Y = Math.floor(Math.random() * 570 / 30) * 30;
+            console.log("Food match Part? ", snakePoint.part.some(matchFoodPart));
         }
+        console.log(`Food X: ${foodPoint.X} -- Food Y: ${foodPoint.Y}`);
+        food.style.top = `${foodPoint.Y}px`;
+        food.style.left = `${foodPoint.X}px`;
     }
 
     placeFood();
     let move;
     let gameActive = false
+    //Definisco il movimento della div .snake in base al tasto direzionale premuto
     document.addEventListener('keydown', (e) => {
-        //Definisco il movimento della div .snake in base al tasto direzionale premuto
         if (gameActive) {
             switch (e.key) {
-                case 'ArrowUp': 
+                case 'ArrowUp':
                     snakePoint.dir.Y = 1;
                     snakePoint.dir.X = 0;
                     snakeHead.style.transform = "rotate(180deg)";
                     break;
-                
+
                 case 'ArrowLeft':
                     snakePoint.dir.Y = 0;
                     snakePoint.dir.X = 1;
@@ -198,11 +198,11 @@ window.onload = () => {
                     console.log("Nope!!");
                     break;
             }
-            
-            }
-            else{
-                gameActive=true;
-                move = setInterval(moveSnake, 200, -30);
-            }
+
+        }
+        else {
+            gameActive = true;
+            move = setInterval(moveSnake, 200, -30);
+        }
     });
 }
