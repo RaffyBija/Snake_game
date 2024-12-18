@@ -1,4 +1,9 @@
+@font-face {
+    font-family: "8Bit";
+    src: url("./FONT/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf");
+}
 body{
+    font-family: "8bit";
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +50,21 @@ body{
     background-color: gray;
     border: 30px solid rgba(255, 0, 0, 0.450) ;
     animation: pulse 1s infinite alternate;
+<<<<<<< HEAD
+=======
+}
+
+#overlay{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-image: url("./IMG/Untitled_design-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .2;
+    text-align: center;
+    font-size: 20px;
+>>>>>>> 95bf505 (Add Pixel Font, GameOver Screen)
 }
 
 .snake{
@@ -89,4 +109,33 @@ body{
     background-size: 190%;
     background-position: center;
     animation: jump 0.7s infinite alternate;
+<<<<<<< HEAD
+=======
+}
+#shadow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 3;
+}
+
+#popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    z-index: 3;
+}
+
+.hidden{
+    visibility: hidden;
+    display: none;
+>>>>>>> 95bf505 (Add Pixel Font, GameOver Screen)
 }

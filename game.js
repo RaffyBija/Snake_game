@@ -5,6 +5,12 @@ window.onload = () => {
     const snakeHead = document.querySelector('.head');
     const appleCounter = document.getElementById('apple-num');
 
+<<<<<<< HEAD
+=======
+    let move;
+    let gameActive = false
+
+>>>>>>> 95bf505 (Add Pixel Font, GameOver Screen)
     let snakePoint = {
         dir: {
             X: 0,
@@ -35,6 +41,14 @@ window.onload = () => {
         clearInterval(move);
         snakeHead.style.backgroundImage = 'url("./IMG/snake_dead.png")';
         console.log("Game Over!");
+<<<<<<< HEAD
+=======
+        document.querySelectorAll(".hidden").forEach(div => div.removeAttribute('class'));
+        //gameActive=false;
+        document.addEventListener('keydown',(e)=>{
+            if(e.key==="Enter")window.location.reload(true);
+        })
+>>>>>>> 95bf505 (Add Pixel Font, GameOver Screen)
     };
 
     //Recupero il valore della proprietà top/left della div .snake dalle regole CSS e le converto in intero eliminando l'unità di misura (px)
@@ -165,8 +179,11 @@ window.onload = () => {
     }
 
     placeFood();
+<<<<<<< HEAD
     let move;
     let gameActive = false
+=======
+>>>>>>> 95bf505 (Add Pixel Font, GameOver Screen)
     //Definisco il movimento della div .snake in base al tasto direzionale premuto
     document.addEventListener('keydown', (e) => {
         if (gameActive) {
@@ -199,9 +216,15 @@ window.onload = () => {
                     console.log("Nope!!");
                     break;
             }
+<<<<<<< HEAD
 
         }
         else {
+=======
+        }
+        else {
+            document.getElementById("para").style.display="none";
+>>>>>>> 95bf505 (Add Pixel Font, GameOver Screen)
             gameActive = true;
             move = setInterval(moveSnake, 100, -30);
         }
