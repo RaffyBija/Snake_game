@@ -209,6 +209,7 @@ window.onload = () => {
         }
         //Avvio del gioco
         else {
+            document.getElementById('para').style.display='none';
             gameActive = true;
             move = setInterval(moveSnake, 100, -30);
         }
